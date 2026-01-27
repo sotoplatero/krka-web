@@ -6,7 +6,6 @@
 		Wrench,
 		Activity,
 		CheckCircle2,
-		Hammer,
 	} from "@lucide/svelte";
 </script>
 
@@ -32,15 +31,15 @@
 	<div class="max-w-7xl mx-auto px-4 py-20 relative z-10">
 		<div class="max-w-4xl">
 			<div class="badge badge-primary badge-lg mb-6">
-				DESIGN & MANUFACTURING
+				Design & Manufacturing
 			</div>
 
 			<h1
 				class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
 			>
-				STANDARD CATALOGS ARE FOR<br />
-				<span class="text-primary">STANDARD PROBLEMS.</span><br />
-				WE BUILD FOR YOUR REALITY.
+				Standard catalogs are for<br />
+				<span class="text-primary">standard problems.</span><br />
+				We build for your reality.
 			</h1>
 
 			<p
@@ -58,8 +57,7 @@
 
 			<div class="flex flex-wrap gap-4">
 				<a href="#contact" class="btn btn-primary btn-lg gap-2">
-					<Hammer class="w-5 h-5" />
-					Start Your Custom Build
+					Get Your Custom Quote
 					<ArrowRight class="w-5 h-5" />
 				</a>
 			</div>
@@ -67,15 +65,12 @@
 	</div>
 </section>
 
-<!-- Section 1: THE HEAVY HITTERS -->
+<!-- Section 1: Power Distribution -->
 <section class="py-24 bg-base-100">
 	<div class="max-w-7xl mx-auto px-4">
 		<div class="text-center mb-16">
-			<div class="badge badge-outline badge-lg mb-4">
-				THE HEAVY HITTERS
-			</div>
 			<h2 class="text-4xl md:text-5xl font-bold mb-4">
-				HV/MV/LV Power Solutions
+				Power Distribution That Fits Your Existing Infrastructure
 			</h2>
 		</div>
 
@@ -93,48 +88,41 @@
 							<div class="badge badge-primary badge-sm mb-2">
 								HV/MV
 							</div>
-							<h3 class="text-2xl font-bold">SWITCHGEAR</h3>
+							<h3 class="text-2xl font-bold">Switchgear</h3>
 						</div>
 					</div>
 
-					<p class="text-lg text-base-content/80 mb-6">
-						Don't tear down walls. Just get better gear.
-						Retrofitting aging infrastructure is a nightmare with
-						"off-the-shelf" units. They never fit. We manufacture
-						custom
-						<span class="font-semibold"
-							>Metal-Clad and Metal-Enclosed</span
-						> switchgear designed to slide exactly into your existing
-						lineup.
+					<p class="text-lg text-base-content/80 mb-4">
+						<strong class="text-primary">Switchgear that slides into your existing lineup.</strong>
 					</p>
 
-					<div class="space-y-4">
+					<p class="text-base-content/70 mb-6">
+						Retrofitting aging infrastructure shouldn't mean tearing down walls. Off-the-shelf units never fit—forcing costly civil work and extended downtime. We manufacture custom Metal-Clad and Metal-Enclosed switchgear designed to match your exact busbar heights and footprint dimensions.
+					</p>
+
+					<div class="space-y-3">
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold">The Spec:</span>
-								Up to 38kV, 3000A.
+							<div class="text-sm">
+								Rated up to <strong>38kV, 3000A</strong>
 							</div>
 						</div>
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold">The Win:</span>
-								We match existing busbar heights and footprint dimensions,
-								saving you thousands in civil work and downtime.
+							<div class="text-sm">
+								Fully customizable protection and metering logic
 							</div>
 						</div>
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold">The Guarantee:</span>
-								Fully customizable protection and metering logic.
+							<div class="text-sm">
+								Save thousands in civil work and get back online faster
 							</div>
 						</div>
 					</div>
@@ -154,44 +142,41 @@
 							<div class="badge badge-secondary badge-sm mb-2">
 								MV/LV
 							</div>
-							<h3 class="text-2xl font-bold">SWITCHBOARD</h3>
+							<h3 class="text-2xl font-bold">Switchboard</h3>
 						</div>
 					</div>
 
-					<p class="text-lg text-base-content/80 mb-6">
-						Maximum density. Minimum floor space. Real estate on
-						your plant floor is expensive. Our designs shrink the
-						footprint of power distribution without sacrificing
-						accessibility or safety.
+					<p class="text-lg text-base-content/80 mb-4">
+						<strong class="text-secondary">Maximum density. Minimum floor space.</strong>
 					</p>
 
-					<div class="space-y-4">
+					<p class="text-base-content/70 mb-6">
+						Real estate on your plant floor is expensive. Our switchboard designs shrink the footprint of power distribution without sacrificing accessibility or safety.
+					</p>
+
+					<div class="space-y-3">
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-secondary mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold">The Spec:</span>
-								MV/LV Switchboards rated for critical uptime.
+							<div class="text-sm">
+								MV/LV Switchboards rated for critical uptime
 							</div>
 						</div>
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-secondary mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold">The Win:</span>
-								High-density designs that leave room for future expansion.
+							<div class="text-sm">
+								High-density layouts that leave room for future expansion
 							</div>
 						</div>
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-secondary mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold">The Standard:</span>
-								Exceeds CSA and ANSI C37.20.1 standards. If the ESA
-								inspector demands it, we've already built it in.
+							<div class="text-sm">
+								Exceeds CSA and ANSI C37.20.1 standards—when the ESA inspector arrives, you're already covered
 							</div>
 						</div>
 					</div>
@@ -201,23 +186,19 @@
 	</div>
 </section>
 
-<!-- Section 2: SAFETY IS NON-NEGOTIABLE -->
+<!-- Section 2: Arc Flash Safety -->
 <section class="py-24 bg-gradient-to-br from-error/5 to-base-100">
 	<div class="max-w-7xl mx-auto px-4">
 		<div class="grid lg:grid-cols-2 gap-12 items-center">
 			<div>
 				<div class="badge badge-error badge-lg mb-4">
-					SAFETY IS NON-NEGOTIABLE
+					Arc Flash Safety
 				</div>
 				<h2 class="text-4xl md:text-5xl font-bold mb-6">
-					ARC FLASH SAFETY SOLUTIONS
+					Protect Your Team. Exceed Compliance Standards.
 				</h2>
 				<p class="text-xl text-base-content/70 mb-8">
-					Your team's safety isn't a line item. It's the priority.
-					Compliance with
-					<span class="font-semibold">CSA Z462</span> is mandatory, but
-					keeping your people alive is moral. We engineer the hazard out
-					of the equation.
+					CSA Z462 compliance is mandatory. Keeping your people safe is a priority. We engineer hazards out of the equation before they become incidents.
 				</p>
 
 				<div class="space-y-6">
@@ -229,12 +210,10 @@
 								</div>
 								<div>
 									<h4 class="font-bold text-lg mb-2">
-										The Tech
+										Arc-Resistant Switchgear
 									</h4>
 									<p class="text-base-content/70">
-										Arc-Resistant Switchgear (Type 2B/2C)
-										that redirects blasts away from
-										operators.
+										Type 2B/2C equipment that redirects blasts away from operators.
 									</p>
 								</div>
 							</div>
@@ -249,18 +228,20 @@
 								</div>
 								<div>
 									<h4 class="font-bold text-lg mb-2">
-										The Strategy
+										Remote Racking Solutions
 									</h4>
 									<p class="text-base-content/70">
-										Remote racking and maintenance solutions
-										that keep personnel outside the Arc
-										Flash Boundary entirely.
+										Keep personnel outside the Arc Flash Boundary entirely.
 									</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
+				<p class="mt-8 text-lg font-semibold text-error">
+					Your team goes home safe. Every shift.
+				</p>
 			</div>
 
 			<div class="relative">
@@ -283,15 +264,12 @@
 	</div>
 </section>
 
-<!-- Section 3: CONTROL & DISTRIBUTION -->
+<!-- Section 3: Power Distribution & Control Panels -->
 <section class="py-24 bg-base-200">
 	<div class="max-w-7xl mx-auto px-4">
 		<div class="text-center mb-16">
-			<div class="badge badge-outline badge-lg mb-4">
-				CONTROL & DISTRIBUTION
-			</div>
 			<h2 class="text-4xl md:text-5xl font-bold mb-4">
-				Built Tough. Built Smart.
+				Power Distribution & Control Panels
 			</h2>
 		</div>
 
@@ -305,44 +283,42 @@
 						</div>
 						<div>
 							<div class="badge badge-accent badge-sm mb-2">
-								POWER PANELS
+								Power Panels
 							</div>
-							<h3 class="text-2xl font-bold">DISTRIBUTION</h3>
+							<h3 class="text-2xl font-bold">Distribution</h3>
 						</div>
 					</div>
 
-					<p class="text-lg text-base-content/80 mb-6">
-						Industrial-grade toughness. Stop replacing flimsy
-						commercial panels that can't handle vibration, dust, or
-						thermal cycling. We build tanks, not toys.
+					<p class="text-lg text-base-content/80 mb-4">
+						<strong class="text-accent">Industrial-grade toughness. Built to last.</strong>
 					</p>
 
-					<div class="space-y-4">
+					<p class="text-base-content/70 mb-6">
+						Stop replacing flimsy commercial panels that can't handle vibration, dust, or thermal cycling. We build heavy-gauge steel enclosures (NEMA 12/3R/4X) designed for Hamilton's harshest industrial environments.
+					</p>
+
+					<div class="space-y-3">
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-accent mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold">Built Tough:</span>
-								Heavy-gauge steel enclosures (NEMA 12/3R/4X) designed
-								for the harsh realities of Hamilton's industrial
-								sector.
+							<div class="text-sm">
+								Ample gutter space for easier wiring
 							</div>
 						</div>
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-accent mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold"
-									>Contractor Friendly:</span
-								>
-								Designed with installation in mind—ample gutter space
-								and logical lug landings to cut installation time
-								in half.
+							<div class="text-sm">
+								Logical lug landings that cut installation time in half
 							</div>
 						</div>
 					</div>
+
+					<p class="mt-6 text-sm text-base-content/60 italic">
+						Panels that survive the job. Installers who thank you.
+					</p>
 				</div>
 			</div>
 
@@ -355,38 +331,35 @@
 						</div>
 						<div>
 							<div class="badge badge-primary badge-sm mb-2">
-								CUSTOM BUILD
+								Custom Build
 							</div>
-							<h3 class="text-2xl font-bold">PANELS</h3>
+							<h3 class="text-2xl font-bold">Panels</h3>
 						</div>
 					</div>
 
-					<p class="text-lg text-base-content/80 mb-6">
-						If you can draw it, we can build it. Complex transfer
-						logic? Hybrid PLC/Power controls? Stainless steel for
-						food processing? While other manufacturers say "no" or
-						quote 40 weeks, we get to work.
+					<p class="text-lg text-base-content/80 mb-4">
+						<strong class="text-primary">If you can draw it, we can build it.</strong>
 					</p>
 
-					<div class="space-y-4">
+					<p class="text-base-content/70 mb-6">
+						Complex transfer logic? Hybrid PLC/Power controls? Stainless steel for food processing? While other manufacturers say "no" or quote 40 weeks, we get to work.
+					</p>
+
+					<div class="space-y-3">
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold">Agility:</span>
-								Local manufacturing means we adapt to design changes
-								instantly, not months later.
+							<div class="text-sm">
+								<strong>Agility:</strong> Local manufacturing means instant design adaptations—not months-long delays
 							</div>
 						</div>
 						<div class="flex items-start gap-3">
 							<CheckCircle2
 								class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
 							/>
-							<div>
-								<span class="font-bold">Compliance:</span>
-								Every custom build leaves our shop with a CSA label.
-								No field evaluation headaches.
+							<div class="text-sm">
+								<strong>Compliance:</strong> Every custom build leaves our shop with a CSA label. No field evaluation headaches.
 							</div>
 						</div>
 					</div>
@@ -396,7 +369,7 @@
 	</div>
 </section>
 
-<!-- Section 4: INTELLIGENCE -->
+<!-- Section 4: Advanced Metering -->
 <section class="py-24 bg-base-100">
 	<div class="max-w-5xl mx-auto px-4">
 		<div
@@ -406,19 +379,17 @@
 				<div class="flex flex-col lg:flex-row items-center gap-8">
 					<div class="flex-1">
 						<div class="badge badge-info badge-lg mb-4">
-							INTELLIGENCE
+							Intelligence
 						</div>
 						<h2 class="text-3xl md:text-4xl font-bold mb-6">
-							ADVANCED METERING
+							Blind Spots Cost Money. See Everything.
 						</h2>
 
 						<p class="text-xl text-base-content/70 mb-8">
-							Blind spots cost money. You can't optimize what you
-							can't see. We integrate
+							You can't optimize what you can't see. We integrate
 							<span class="font-semibold"
 								>revenue-grade metering</span
-							> that exposes power quality issues before they kill
-							your motors.
+							> that exposes power quality issues before they damage your motors.
 						</p>
 
 						<div class="space-y-4">
@@ -427,8 +398,7 @@
 									class="w-5 h-5 text-info mt-0.5 flex-shrink-0"
 								/>
 								<div>
-									<span class="font-bold">The Insight:</span>
-									Real-time tracking of harmonics, sags, and swells.
+									Real-time tracking of harmonics, sags, and swells
 								</div>
 							</div>
 							<div class="flex items-start gap-3">
@@ -436,12 +406,22 @@
 									class="w-5 h-5 text-info mt-0.5 flex-shrink-0"
 								/>
 								<div>
-									<span class="font-bold">The Value:</span>
-									Turn your electrical room into a data center
-									for predictive maintenance.
+									Early detection of problems before they cause failures
+								</div>
+							</div>
+							<div class="flex items-start gap-3">
+								<CheckCircle2
+									class="w-5 h-5 text-info mt-0.5 flex-shrink-0"
+								/>
+								<div>
+									Data you can use for predictive maintenance
 								</div>
 							</div>
 						</div>
+
+						<p class="mt-6 text-lg font-semibold text-info">
+							Turn your electrical room into a data center. Stop guessing. Start knowing.
+						</p>
 					</div>
 
 					<div
@@ -455,7 +435,7 @@
 	</div>
 </section>
 
-<!-- Footer: THE CLOSER -->
+<!-- Footer CTA -->
 <section
 	id="contact"
 	class="py-24 bg-gradient-to-br from-base-200 via-base-100 to-primary/5"
@@ -469,7 +449,7 @@
 
 		<p class="text-xl text-base-content/70 mb-10 max-w-2xl mx-auto">
 			You have a complex power problem. We have the engineering heritage
-			to solve it. Let's look at your single-line diagram today.
+			to solve it. Let's review your single-line diagram today.
 		</p>
 
 		<div class="flex flex-wrap justify-center gap-4">

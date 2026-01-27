@@ -9,7 +9,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<html data-theme="krka" lang="en"></html>
+	<!-- <html data-theme="krka" lang="en"></html> -->
 </svelte:head>
 
 <div class="min-h-screen flex flex-col">
