@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50">
+	<!-- Power symbol / lightning bolt -->
+	<path d="M25 5 L10 28 L22 28 L18 45 L38 20 L25 20 Z" fill="#006870"/>
+	<!-- Text "KRKA" -->
+	<text x="45" y="32" font-family="Anek Gurmukhi, sans-serif" font-weight="700" font-size="26" fill="#006870">KRKA</text>
+	<!-- Text "POWER &" -->
+	<text x="103" y="32" font-family="Anek Gurmukhi, sans-serif" font-weight="700" font-size="18" fill="#006870">POWER &amp;</text>
+	<!-- "AUTOMATION" text -->
+	<text x="45" y="48" font-family="Barlow Condensed, sans-serif" font-weight="500" font-size="14" letter-spacing="0.1em" fill="#444444">AUTOMATION</text>
+</svg>
