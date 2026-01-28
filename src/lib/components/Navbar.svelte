@@ -1,37 +1,61 @@
 <script>
-	import { Menu, X, ChevronDown, Phone, ArrowRight } from '@lucide/svelte';
-	import logo from '$lib/assets/krka-logo.webp';
+	import {
+		Menu,
+		X,
+		ChevronDown,
+		Phone,
+		ArrowRight,
+		Cog,
+		Wrench,
+		Cpu,
+		Bot,
+	} from "@lucide/svelte";
+	import logo from "$lib/assets/krka-logo.webp";
 
 	let mobileMenuOpen = $state(false);
-	let servicesDropdownOpen = $state(false);
 	let scrolled = $state(false);
 
-	// Update scrolled state on browser after mount
 	$effect(() => {
-		if (typeof window !== 'undefined') {
+		if (typeof window !== "undefined") {
 			const updateScrolled = () => (scrolled = window.scrollY > 50);
 			updateScrolled();
-			window.addEventListener('scroll', updateScrolled);
-			return () => window.removeEventListener('scroll', updateScrolled);
+			window.addEventListener("scroll", updateScrolled);
+			return () => window.removeEventListener("scroll", updateScrolled);
 		}
 	});
 
-	const navLinks = [
-		{ href: '#hero', label: 'Home' },
-		{ href: '#about', label: 'About' },
+	const services = [
 		{
-			href: '#services',
-			label: 'Services',
-			dropdown: [
-				{ href: '#design', label: 'Design & Manufacturing' },
-				{ href: '#engineering', label: 'Engineering Services' },
-				{ href: '#automation', label: 'Automation & Control' },
-				{ href: '#robotics', label: 'Robotics' }
-			]
+			href: "/services/design-manufacturing",
+			label: "Design & Manufacturing",
+			description: "Custom switchgear, panels & enclosures",
+			icon: Cog,
 		},
-		{ href: '#industries', label: 'Industries' },
-		{ href: '#projects', label: 'Projects' },
-		{ href: '#contact', label: 'Contact' }
+		{
+			href: "/services/engineering",
+			label: "Engineering Services",
+			description: "Installation, maintenance & arc flash",
+			icon: Wrench,
+		},
+		{
+			href: "/services/automation",
+			label: "Automation & Control",
+			description: "PLC, DCS & control systems",
+			icon: Cpu,
+		},
+		{
+			href: "/services/robotics",
+			label: "Robotics",
+			description: "Integration, palletizing & vision",
+			icon: Bot,
+		},
+	];
+
+	const navLinks = [
+		{ href: "/#about", label: "About" },
+		{ href: "/#industries", label: "Industries" },
+		{ href: "/#projects", label: "Projects" },
+		{ href: "/#contact", label: "Contact" },
 	];
 
 	function toggleMobileMenu() {
@@ -44,70 +68,80 @@
 </script>
 
 <header
-	class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-base-100/90 backdrop-blur-md shadow-sm"
+	class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 {scrolled
+		? 'bg-base-100/95 backdrop-blur-md shadow-md'
+		: 'bg-base-100/90 backdrop-blur-sm'}"
 >
-	<nav class="max-w-7xl mx-auto px-4 py-4">
+	<nav class="max-w-7xl mx-auto px-4 py-3">
 		<div class="flex items-center justify-between">
 			<!-- Logo -->
-			<a href="#hero" class="flex items-center gap-3">
+			<a href="/" class="flex items-center gap-3 shrink-0">
 				<img src={logo} alt="Krka Power Inc." class="h-10 md:h-12" />
 			</a>
 
 			<!-- Desktop Navigation -->
-			<div class="hidden lg:flex items-center gap-8">
-				{#each navLinks as link (link.label)}
-					{#if link.dropdown}
-						<div
-							class="relative"
-							role="button"
-							tabindex="0"
-							onmouseenter={() => (servicesDropdownOpen = true)}
-							onmouseleave={() => (servicesDropdownOpen = false)}
-							onfocus={() => (servicesDropdownOpen = true)}
-							onblur={() => (servicesDropdownOpen = false)}
-						>
-							<button
-								class="flex items-center gap-1 font-medium text-sm uppercase tracking-wide hover:text-primary transition-colors"
-							>
-								{link.label}
-								<ChevronDown
-									class="w-4 h-4 transition-transform {servicesDropdownOpen ? 'rotate-180' : ''}"
-								/>
-							</button>
-
-							{#if servicesDropdownOpen}
-								<div
-									class="absolute top-full left-0 mt-2 w-56 bg-base-100 rounded-lg shadow-xl border border-base-300 py-2"
-								>
-									{#each link.dropdown as item (item.label)}
-										<a
-											href={item.href}
-											class="block px-4 py-2 text-sm hover:bg-base-200 hover:text-primary transition-colors"
+			<div class="hidden lg:flex items-center gap-1">
+				<!-- Services Dropdown -->
+				<div class="dropdown dropdown-hover dropdown-bottom">
+					<div
+						tabindex="0"
+						role="button"
+						class="btn btn-ghost btn-sm gap-1 font-medium text-sm uppercase tracking-wide"
+					>
+						Services
+						<ChevronDown class="w-4 h-4" />
+					</div>
+					<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+					<div
+						tabindex="0"
+						class="dropdown-content z-50 mt-1 p-2 shadow-xl bg-base-100 rounded-box w-72 border border-base-200"
+					>
+						<ul class="menu menu-sm gap-1 p-0">
+							{#each services as service (service.label)}
+								<li>
+									<a
+										href={service.href}
+										class="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/10 group transition-colors"
+									>
+										<div
+											class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-content transition-colors"
 										>
-											{item.label}
-										</a>
-									{/each}
-								</div>
-							{/if}
-						</div>
-					{:else}
-						<a
-							href={link.href}
-							class="font-medium text-sm uppercase tracking-wide hover:text-primary transition-colors"
-						>
-							{link.label}
-						</a>
-					{/if}
+											<service.icon class="w-5 h-5" />
+										</div>
+										<div class="min-w-0">
+											<div class="font-semibold text-sm">{service.label}</div>
+											<div class="text-xs text-base-content/60 mt-0.5">
+												{service.description}
+											</div>
+										</div>
+									</a>
+								</li>
+							{/each}
+						</ul>
+					</div>
+				</div>
+
+				<!-- Other Nav Links -->
+				{#each navLinks as link (link.label)}
+					<a
+						href={link.href}
+						class="btn btn-ghost btn-sm font-medium text-sm uppercase tracking-wide"
+					>
+						{link.label}
+					</a>
 				{/each}
 			</div>
 
 			<!-- CTA Buttons -->
-			<div class="hidden lg:flex items-center gap-4">
-				<a href="tel:9056910691" class="flex items-center gap-2 text-sm font-medium">
+			<div class="hidden lg:flex items-center gap-3">
+				<a
+					href="tel:9056910691"
+					class="btn btn-ghost btn-sm gap-2 font-medium"
+				>
 					<Phone class="w-4 h-4" />
-					<span>905 691-0691</span>
+					<span class="hidden xl:inline">905 691-0691</span>
 				</a>
-				<a href="#contact" class="btn btn-primary btn-sm gap-2">
+				<a href="/get-quote" class="btn btn-primary btn-sm gap-2">
 					Get Quote
 					<ArrowRight class="w-4 h-4" />
 				</a>
@@ -115,9 +149,10 @@
 
 			<!-- Mobile Menu Button -->
 			<button
-				class="lg:hidden p-2 hover:bg-base-200 rounded-lg transition-colors"
+				class="lg:hidden btn btn-ghost btn-sm btn-square"
 				onclick={toggleMobileMenu}
 				aria-label="Toggle menu"
+				aria-expanded={mobileMenuOpen}
 			>
 				{#if mobileMenuOpen}
 					<X class="w-6 h-6" />
@@ -129,49 +164,70 @@
 
 		<!-- Mobile Menu -->
 		{#if mobileMenuOpen}
-			<div class="lg:hidden mt-4 pb-4 border-t border-base-300 pt-4">
-				<div class="flex flex-col gap-2">
-					{#each navLinks as link (link.label)}
-						{#if link.dropdown}
-							<div class="py-2">
-								<span class="font-medium text-sm uppercase tracking-wide text-base-content/60">
-									{link.label}
-								</span>
-								<div class="mt-2 ml-4 flex flex-col gap-1">
-									{#each link.dropdown as item (item.label)}
-										<a
-											href={item.href}
-											class="py-2 text-sm hover:text-primary transition-colors"
-											onclick={closeMobileMenu}
-										>
-											{item.label}
-										</a>
-									{/each}
+			<div class="lg:hidden mt-4 pb-4 border-t border-base-200 pt-4 animate-in fade-in slide-in-from-top-2 duration-200">
+				<!-- Services Section -->
+				<div class="mb-4">
+					<p class="text-xs font-semibold uppercase tracking-wider text-base-content/50 mb-2 px-2">
+						Services
+					</p>
+					<div class="grid gap-1">
+						{#each services as service (service.label)}
+							<a
+								href={service.href}
+								class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors"
+								onclick={closeMobileMenu}
+							>
+								<div
+									class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0"
+								>
+									<service.icon class="w-4 h-4 text-primary" />
 								</div>
-							</div>
-						{:else}
+								<div>
+									<div class="font-medium text-sm">{service.label}</div>
+									<div class="text-xs text-base-content/60">{service.description}</div>
+								</div>
+							</a>
+						{/each}
+					</div>
+				</div>
+
+				<!-- Other Links -->
+				<div class="border-t border-base-200 pt-4 mb-4">
+					<div class="flex flex-wrap gap-2">
+						{#each navLinks as link (link.label)}
 							<a
 								href={link.href}
-								class="py-2 font-medium text-sm uppercase tracking-wide hover:text-primary transition-colors"
+								class="btn btn-ghost btn-sm"
 								onclick={closeMobileMenu}
 							>
 								{link.label}
 							</a>
-						{/if}
-					{/each}
-
-					<div class="mt-4 pt-4 border-t border-base-300 flex flex-col gap-3">
-						<a href="tel:9056910691" class="flex items-center gap-2 text-sm font-medium">
-							<Phone class="w-4 h-4" />
-							<span>905 691-0691</span>
-						</a>
-						<a href="#contact" class="btn btn-primary btn-sm gap-2 w-full" onclick={closeMobileMenu}>
-							Get Quote
-							<ArrowRight class="w-4 h-4" />
-						</a>
+						{/each}
 					</div>
+				</div>
+
+				<!-- CTA -->
+				<div class="border-t border-base-200 pt-4 flex flex-col gap-3">
+					<a
+						href="tel:9056910691"
+						class="btn btn-ghost btn-sm justify-start gap-2"
+					>
+						<Phone class="w-4 h-4" />
+						905 691-0691
+					</a>
+					<a
+						href="/get-quote"
+						class="btn btn-primary gap-2 w-full"
+						onclick={closeMobileMenu}
+					>
+						Get Quote
+						<ArrowRight class="w-4 h-4" />
+					</a>
 				</div>
 			</div>
 		{/if}
 	</nav>
 </header>
+
+<!-- Spacer for fixed header -->
+<div class="h-16 md:h-18"></div>

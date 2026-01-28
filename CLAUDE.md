@@ -4,9 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a SvelteKit 2.x minimal template project using Svelte 5 with runes syntax and TailwindCSS 4.x (via Vite plugin). The project also includes MDSvEX for markdown support and DaisyUI for component styling.
+**Krka** website built with SvelteKit 2.x, using Svelte 5 with runes syntax and TailwindCSS 4.x (via Vite plugin). The project includes MDSvEx for markdown support, DaisyUI for UI components, and Lucide for icons.
 
 **Package Manager**: This project uses `pnpm` as the package manager.
+
+### Current Versions (package.json)
+- **SvelteKit**: ^2.50.1
+- **Svelte**: ^5.48.2
+- **Vite**: ^7.3.1
+- **TailwindCSS**: ^4.1.18
+- **DaisyUI**: ^5.5.14
+- **MDSvEx**: ^0.12.6
+- **Lucide Svelte**: ^0.563.1 (icons library)
 
 ## Development Commands
 
@@ -56,7 +65,7 @@ let doubled = $derived(count * 2);
 
 ### File Extensions
 - `.svelte` - Svelte components
-- `.svx` - Markdown files processed by MDSvEX (can be used as routes)
+- `.svx` - Markdown files processed by MDSvEx (can be used as routes)
 
 ### Project Structure
 - `src/routes/` - File-based routing (SvelteKit convention)
@@ -69,6 +78,10 @@ let doubled = $derived(count * 2);
 - DaisyUI is available for pre-built components
 - Global styles are in `src/routes/layout.css` (imported in root layout)
 
+### Icons
+- Use `@lucide/svelte` for icons
+- Example: `import { Menu, X } from '@lucide/svelte';`
+
 ### Type Checking
 - Uses JSDoc type annotations (not TypeScript)
 - Configured via `jsconfig.json` with `checkJs: true`
@@ -77,7 +90,7 @@ let doubled = $derived(count * 2);
 ## Important Configuration
 
 ### Svelte Configuration (`svelte.config.js`)
-- MDSvEX preprocessor enabled for `.svx` files
+- MDSvEx preprocessor enabled for `.svx` files
 - Adapter-auto for deployment (supports Vercel, Netlify, etc.)
 
 ### Vite Configuration (`vite.config.js`)

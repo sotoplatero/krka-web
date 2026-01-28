@@ -122,10 +122,10 @@
 			<!-- CTAs -->
 			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
 				<a
-					href="#contact"
+					href="/get-quote"
 					class="btn btn-primary btn-lg gap-2 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
 				>
-					Get Started
+					Get Quote
 					<ArrowRight class="w-5 h-5" />
 				</a>
 				<a

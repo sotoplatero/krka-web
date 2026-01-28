@@ -68,6 +68,7 @@
 			btnColor: "btn-primary",
 			accentColor: "bg-primary",
 			imagePosition: "left",
+			link: "/services/design-manufacturing",
 		},
 		{
 			id: "engineering",
@@ -81,6 +82,7 @@
 			btnColor: "btn-secondary",
 			accentColor: "bg-secondary",
 			imagePosition: "right",
+			link: "/services/engineering",
 		},
 		{
 			id: "automation",
@@ -94,6 +96,7 @@
 			btnColor: "btn-accent",
 			accentColor: "bg-accent",
 			imagePosition: "left",
+			link: "/services/automation",
 		},
 		{
 			id: "robotics",
@@ -107,6 +110,7 @@
 			btnColor: "btn-info",
 			accentColor: "bg-info",
 			imagePosition: "right",
+			link: "/services/robotics",
 		},
 	];
 </script>
@@ -182,10 +186,10 @@
 						</div>
 
 						<!-- Botón CTA -->
-						<button class="btn {service.btnColor} gap-2">
+						<a href={service.link} class="btn {service.btnColor} gap-2">
 							Learn More
 							<ArrowRight class="w-4 h-4" />
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>
