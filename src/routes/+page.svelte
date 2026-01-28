@@ -82,7 +82,11 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section id="hero" class="min-h-screen relative overflow-hidden pt-20">
+<section
+	id="hero"
+	class="relative overflow-hidden flex flex-col items-center justify-center min-h-screen"
+	style="padding-top: var(--header-height);"
+>
 	<!-- Video Background -->
 	<iframe
 		src="https://www.youtube.com/embed/dN9OoIP9Wf4?rel=0&autoplay=1&mute=1&controls=0&loop=1&playlist=dN9OoIP9Wf4&fs=0&showinfo=0&modestbranding=1&iv_load_policy=3&disablekb=1&enablejsapi=1"
@@ -94,7 +98,8 @@
 	<!-- Overlay -->
 	<div class="absolute inset-0 bg-black/80 z-10"></div>
 
-	<div class="relative z-20 max-w-7xl mx-auto px-4 py-20 lg:py-32">
+	<!-- Flex container for vertical centering -->
+	<div class="relative z-20 max-w-7xl mx-auto px-4">
 		<div
 			class="max-w-4xl mx-auto text-center transition-all duration-1000 {heroVisible
 				? 'opacity-100 translate-y-0'
@@ -102,7 +107,7 @@
 		>
 			<!-- Headline -->
 			<h1
-				class="text-4xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight text-white"
+				class="text-4xl md:text-7xl lg:text-9xl font-bold mb-4 leading-tight text-white"
 			>
 				Custom Power Distribution<br />
 				<span class="text-transparent bg-clip-text bg-secondary">
@@ -120,20 +125,13 @@
 			</p>
 
 			<!-- CTAs -->
-			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+			<div class=" mb-12">
 				<a
 					href="/get-quote"
 					class="btn btn-primary btn-lg gap-2 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
 				>
 					Get Quote
 					<ArrowRight class="w-5 h-5" />
-				</a>
-				<a
-					href="#services"
-					class="btn btn-outline btn-lg gap-2 hover:scale-105 transition-all duration-300 !border-white !text-white hover:!bg-white hover:!text-base-100"
-				>
-					Learn More
-					<ChevronDown class="w-5 h-5" />
 				</a>
 			</div>
 
@@ -303,7 +301,7 @@
 								class="w-8 h-8 text-primary group-hover:text-primary-content transition-colors"
 							/>
 						</div>
-						<h3 class="card-title text-lg mb-2">{industry.name}</h3>
+						<h3 class="card-title">{industry.name}</h3>
 						<p class="text-sm text-base-content/70">
 							{industry.description}
 						</p>

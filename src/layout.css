@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* CSS Custom Properties for layout */
+:root {
+	--header-height: 64px;
+}
+
+@media (min-width: 768px) {
+	:root {
+		--header-height: 72px;
+	}
+}
+
 /* Krka Power Custom Theme - DaisyUI 5 Format */
 @plugin "daisyui/theme" {
 	name: "krka";

@@ -230,4 +230,4 @@
 </header>
 
 <!-- Spacer for fixed header -->
-<div class="h-16 md:h-18"></div>
+<div style="height: var(--header-height);"></div>

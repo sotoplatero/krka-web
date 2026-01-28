@@ -23,7 +23,8 @@
       "WebSearch",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(pnpm add:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(npx skills find:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

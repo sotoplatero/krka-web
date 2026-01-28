@@ -141,6 +141,7 @@
 								image: item.image,
 							}))}
 							accentColor={service.accentColor}
+							fullWidth={true}
 						/>
 					</div>
 

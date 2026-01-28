@@ -5,14 +5,22 @@
 	 * @property {string} [image]
 	 */
 
-	/** @type {{ slides: Slide[], accentColor?: string }} */
-	let { slides, accentColor = 'bg-primary' } = $props();
+	/** @type {{ slides: Slide[], accentColor?: string, fullWidth?: boolean }} */
+	let { slides, accentColor = 'bg-primary', fullWidth = false } = $props();
 
 	let currentIndex = $state(0);
+	let touchStartX = $state(0);
+	let touchEndX = $state(0);
 
 	function next() {
 		if (slides.length > 1) {
 			currentIndex = (currentIndex + 1) % slides.length;
+		}
+	}
+
+	function prev() {
+		if (slides.length > 1) {
+			currentIndex = (currentIndex - 1 + slides.length) % slides.length;
 		}
 	}
 
@@ -23,23 +31,51 @@
 		currentIndex = index;
 	}
 
+	// Touch/Swipe handlers
+	/** @param {TouchEvent} e */
+	function handleTouchStart(e) {
+		touchStartX = e.changedTouches[0].screenX;
+	}
+
+	/** @param {TouchEvent} e */
+	function handleTouchEnd(e) {
+		touchEndX = e.changedTouches[0].screenX;
+		handleSwipe();
+	}
+
+	function handleSwipe() {
+		const threshold = 50; // Minimum swipe distance
+		const diff = touchEndX - touchStartX;
+
+		if (Math.abs(diff) > threshold) {
+			if (diff > 0) {
+				prev(); // Swipe right -> previous
+			} else {
+				next(); // Swipe left -> next
+			}
+		}
+	}
+
 	let currentSlide = $derived(slides[currentIndex]);
 </script>
 
-<div class="relative w-full">
+<div class="relative w-full {fullWidth ? '-mx-4 px-4 md:mx-0 md:px-0' : ''}">
 	<!-- Image Container -->
 	<div
-		class="aspect-video md:aspect-square bg-gradient-to-br from-base-300 to-base-200 rounded-xl overflow-hidden relative cursor-pointer"
+		class="aspect-video md:aspect-square bg-gradient-to-br from-base-300 to-base-200 rounded-xl overflow-hidden relative cursor-pointer select-none"
 		onclick={next}
 		role="button"
 		tabindex="0"
 		onkeydown={(e) => e.key === 'Enter' && next()}
+		ontouchstart={handleTouchStart}
+		ontouchend={handleTouchEnd}
 	>
 		{#if currentSlide?.image}
 			<img
 				src={currentSlide.image}
 				alt={currentSlide.title}
-				class="w-full h-full object-cover"
+				class="w-full h-full object-cover pointer-events-none"
+				draggable="false"
 			/>
 		{:else}
 			<div class="w-full h-full flex items-center justify-center text-base-content/20">
