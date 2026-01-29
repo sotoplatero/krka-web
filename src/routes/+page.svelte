@@ -86,7 +86,7 @@
 <section
 	id="hero"
 	class="relative overflow-hidden grid place-items-center place-content-center"
-	style="height: 100vh;"
+	style="height: 100dvh;"
 >
 	<!-- Video Background -->
 	<iframe
