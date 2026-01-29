@@ -24,7 +24,8 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(pnpm add:*)",
       "Bash(git checkout:*)",
-      "Bash(npx skills find:*)"
+      "Bash(npx skills find:*)",
+      "Bash(ssh:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

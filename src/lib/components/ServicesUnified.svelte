@@ -134,14 +134,17 @@
 				<!-- Imagen y detalles en dos columnas -->
 				<div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
 					<!-- Slideshow -->
-					<div class={service.imagePosition === "right" ? "md:order-2" : ""}>
+					<div
+						class={service.imagePosition === "right"
+							? "md:order-2"
+							: ""}
+					>
 						<ImageSlideshow
 							slides={service.items.map((item) => ({
 								title: item.title,
 								image: item.image,
 							}))}
 							accentColor={service.accentColor}
-							fullWidth={true}
 						/>
 					</div>
 
@@ -152,7 +155,7 @@
 							: ""}
 					>
 						<!-- Lista de servicios con iconos -->
-						<div class="space-y-4 mb-8">
+						<div class="space-y-8 mb-8">
 							{#each service.items as item (item.id)}
 								{@const IconComponent = serviceIcons[item.id]}
 								<div class="flex items-center gap-3">
@@ -187,7 +190,10 @@
 						</div>
 
 						<!-- Botón CTA -->
-						<a href={service.link} class="btn {service.btnColor} gap-2">
+						<a
+							href={service.link}
+							class="btn {service.btnColor} gap-2"
+						>
 							Learn More
 							<ArrowRight class="w-4 h-4" />
 						</a>
