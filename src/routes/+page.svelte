@@ -17,6 +17,7 @@
 		Building,
 		Landmark,
 		ChevronDown,
+		Award,
 	} from "@lucide/svelte";
 	import logo from "$lib/assets/krka-logo.webp";
 	import schneider from "$lib/assets/partners/schneider.webp";
@@ -84,8 +85,8 @@
 <!-- Hero Section -->
 <section
 	id="hero"
-	class="relative overflow-hidden flex flex-col items-center justify-center min-h-screen"
-	style="padding-top: var(--header-height);"
+	class="relative overflow-hidden grid place-items-center place-content-center"
+	style="height: 100vh;"
 >
 	<!-- Video Background -->
 	<iframe
@@ -98,7 +99,7 @@
 	<!-- Overlay -->
 	<div class="absolute inset-0 bg-black/80 z-10"></div>
 
-	<!-- Flex container for vertical centering -->
+	<!-- Content container - centered within viewport -->
 	<div class="relative z-20 max-w-7xl mx-auto px-4">
 		<div
 			class="max-w-4xl mx-auto text-center transition-all duration-1000 {heroVisible
@@ -117,15 +118,15 @@
 
 			<!-- Subheadline -->
 			<p
-				class="text-xl md:text-2xl mb-8 text-white/80 max-w-3xl mx-auto leading-relaxed"
+				class="text-lg md:text-xl mb-8 text-white/80 max-w-3xl mx-auto leading-relaxed"
 			>
 				When standard isn't custom enough. Manufacturing
 				mission-critical power solutions for Canada's most demanding
 				industries since 2013.
 			</p>
 
-			<!-- CTAs -->
-			<div class=" mb-12">
+			<!-- CTA -->
+			<div class="mb-8">
 				<a
 					href="/get-quote"
 					class="btn btn-primary btn-lg gap-2 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
@@ -137,19 +138,23 @@
 
 			<!-- Trust Badges -->
 			<div
-				class="flex flex-wrap justify-center gap-6 md:gap-8 items-center text-sm text-white/70 font-medium"
+				class="grid grid-cols-2 md:grid-cols-4 justify-center items-center gap-4 text-sm text-white/60"
 			>
 				<div class="flex items-center gap-2">
-					<Check class="w-5 h-5 text-success" />
+					<Check class="w-4 h-4 text-success" />
 					<span>CSA & ANSI Certified</span>
 				</div>
 				<div class="flex items-center gap-2">
-					<Shield class="w-5 h-5 text-success" />
+					<Shield class="w-4 h-4 text-success" />
 					<span>Industry 4.0 Ready</span>
 				</div>
 				<div class="flex items-center gap-2">
-					<Clock class="w-5 h-5 text-success" />
+					<Clock class="w-4 h-4 text-success" />
 					<span>24/7 Emergency Response</span>
+				</div>
+				<div class="flex items-center gap-2">
+					<Award class="w-4 h-4 text-success" />
+					<span>ISO 9001:2015 Certified</span>
 				</div>
 			</div>
 		</div>
@@ -293,7 +298,7 @@
 				<div
 					class="card bg-base-100 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group"
 				>
-					<div class="card-body items-center text-center">
+					<div class="card-body items-center text-center p-3 md:p-6">
 						<div
 							class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors"
 						>
